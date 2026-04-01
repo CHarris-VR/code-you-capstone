@@ -1,0 +1,75 @@
+=== Summary ===
+
+=== Authentication Successes ===
+Total successful logins: 970
+
+=== Authentication Failures ===
+Total failed logins: 169
+
+Details ):
+ 2026-03-11T07:52:56Z user=root ip=192.168.1.15 message=Invalid password
+ 2026-03-10T17:34:52Z user=admin ip=192.168.1.15 message=Invalid password
+ 2026-03-11T11:42:58Z user=root ip=192.168.1.15 message=Invalid password
+ 2026-03-16T10:30:17Z user=tbraxter ip=10.0.2.87 message=Invalid password
+ 2026-03-14T09:54:50Z user=jtoll ip=192.168.1.15 message=Invalid password
+ 2026-03-10T16:32:22Z user=root ip=192.168.1.17 message=Invalid password
+ 2026-03-10T08:22:13Z user=admin ip=192.168.1.15 message=Invalid password
+ 2026-03-16T01:32:49Z user=tbraxter ip=192.168.1.15 message=Invalid password
+ 2026-03-12T02:11:30Z user=jdoe ip=192.168.1.17 message=Invalid password
+ 2026-03-11T08:52:30Z user=jdoe ip=192.168.1.15 message=Invalid password
+
+=== Suspicious Privilege Changes ===
+Total privilege change events: 95
+Suspicious events detected: 50
+
+Details (up to first 10):
+ 2026-03-12T02:43:11Z user=hmulrooney1 ip=194.77.213.18 message=Granted sudo privileges
+ 2026-03-16T01:27:30Z user=root ip=51.91.61.140 message=Granted sudo privileges
+ 2026-03-10T20:03:39Z user=hgaineofengland3 ip=84.201.139.199 message=Granted sudo privileges
+ 2026-03-17T14:14:39Z user=root ip=98.241.7.192 message=Granted sudo privileges
+ 2026-03-10T16:28:52Z user=cpittam5 ip=79.68.37.38 message=User added to administrators group
+ 2026-03-10T19:12:34Z user=bphayre6 ip=195.195.1.138 message=User added to administrators group
+ 2026-03-15T19:24:15Z user=root ip=215.111.196.43 message=Logged in as root
+ 2026-03-11T15:40:46Z user=root ip=27.214.198.117 message=User added to administrators group
+ 2026-03-14T20:40:29Z user=nphilippea ip=71.121.191.107 message=Logged in as root
+ 2026-03-17T18:43:22Z user=rklaaasenc ip=238.213.65.94 message=Granted sudo privileges
+ 2026-03-14T17:58:23Z user=ealdritte ip=214.103.94.217 message=User added to administrators group
+ 2026-03-10T19:18:44Z user=bbrunag ip=127.163.4.42 message=Logged in as root
+ 2026-03-10T14:03:51Z user=root ip=51.167.98.192 message=Logged in as root
+ 2026-03-14T14:24:21Z user=hsicklingk ip=210.158.177.73 message=Granted sudo privileges
+ 2026-03-15T08:00:21Z user=eblindtl ip=155.248.115.177 message=User added to administrators group
+ 2026-03-13T23:53:13Z user=dmcblainm ip=136.228.120.55 message=Granted sudo privileges
+ 2026-03-11T10:36:06Z user=tlearmondn ip=38.76.148.24 message=User added to administrators group
+ 2026-03-12T14:41:56Z user=bmargramp ip=186.133.36.204 message=Granted sudo privileges
+ 2026-03-15T06:06:23Z user=lmacfaydent ip=63.78.204.129 message=Logged in as root
+ 2026-03-11T12:47:13Z user=root ip=93.1.127.33 message=User added to administrators group
+ 2026-03-12T13:03:27Z user=kwennam11 ip=161.4.56.8 message=Granted sudo privileges
+ 2026-03-11T08:33:21Z user=doliveras1n ip=194.187.18.112 message=Logged in as root
+ 2026-03-10T08:53:21Z user=rdybald1t ip=199.85.211.111 message=User added to administrators group
+ 2026-03-15T21:01:40Z user=mshaxby1v ip=239.215.194.39 message=User added to administrators group
+ 2026-03-16T03:22:03Z user=jcruttenden1w ip=52.118.195.241 message=User added to administrators group
+ 2026-03-17T13:11:52Z user=hstuke1x ip=109.148.70.52 message=User added to administrators group
+ 2026-03-16T05:15:06Z user=rbradman1z ip=131.240.211.105 message=Granted sudo privileges
+ 2026-03-12T23:54:25Z user=mfairfoull21 ip=195.169.120.69 message=Logged in as root
+ 2026-03-16T16:10:44Z user=sdeathe23 ip=136.52.247.41 message=Granted sudo privileges
+ 2026-03-12T21:54:34Z user=root ip=235.240.89.72 message=User added to administrators group
+ 2026-03-12T10:28:12Z user=dmatisoff27 ip=48.62.183.191 message=User added to administrators group
+ 2026-03-13T02:21:00Z user=lgremane2a ip=168.122.146.184 message=Granted sudo privileges
+ 2026-03-16T14:05:04Z user=ssemens2c ip=106.73.155.132 message=Logged in as root
+ 2026-03-12T08:25:02Z user=bmcniven2d ip=69.183.67.77 message=Granted sudo privileges
+ 2026-03-16T19:14:42Z user=root ip=94.234.64.142 message=Granted sudo privileges
+ 2026-03-14T14:45:41Z user=cdrever2g ip=236.68.243.33 message=User added to administrators group
+ 2026-03-12T23:31:57Z user=dlasslett2j ip=131.195.12.213 message=User added to administrators group
+ 2026-03-11T10:50:17Z user=lhouldey2k ip=42.137.188.195 message=Logged in as root
+ 2026-03-13T15:44:00Z user=rshilvock2l ip=200.236.162.162 message=Granted sudo privileges
+ 2026-03-12T06:43:35Z user=jkairns2o ip=255.140.35.50 message=Granted sudo privileges
+ 2026-03-14T00:02:24Z user=root ip=125.232.21.10 message=User added to administrators group
+ 2026-03-17T09:16:30Z user=mkibbee2q ip=234.32.53.24 message=User added to administrators group
+ 2026-03-14T06:43:56Z user=rdenyukin2t ip=80.123.211.206 message=User added to administrators group
+ 2026-03-15T02:52:49Z user=vhillen2v ip=45.2.44.27 message=Logged in as root
+ 2026-03-10T23:31:23Z user=ifairbank2x ip=83.217.213.248 message=User added to administrators group
+ 2026-03-14T01:33:17Z user=mknappen2z ip=173.25.107.246 message=User added to administrators group
+ 2026-03-10T04:42:37Z user=pbemwell30 ip=38.139.13.225 message=Logged in as root
+ 2026-03-13T12:14:12Z user=root ip=192.63.184.248 message=Logged in as root
+ 2026-03-17T05:17:58Z user=root ip=57.93.189.70 message=User added to administrators group
+ 2026-03-10T02:44:27Z user=evazquez35 ip=10.0.2.87 message=User added to administrators group
