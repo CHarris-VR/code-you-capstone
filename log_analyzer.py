@@ -11,6 +11,7 @@ filename = 'sample_log.txt'
 event_counts = Counter()
 user_counts = Counter()
 ip_counts = Counter()
+failed_user_login = Counter()
 # Creating a counter auth success and auth failure.
 auth_success = 0
 auth_fail = 0
@@ -52,13 +53,20 @@ with open(filename, 'r', encoding='utf-8') as f:
         # failures for later review
         if event == "AUTH_SUCCESS":
             auth_success += 1
-        if event in ("AUTH_FAIL"):
+        if event == ("AUTH_FAIL"):
             auth_fail += 1
             failed_logins.append((timestamp, user, ip, message))
+            failed_user_login[user] += 1
+
 
         # Added for privilege change events
         if event == "PRIV_CHANGE":
             priv_change.append((timestamp, user, ip, message))
+
+# Repeated login attempts by user.
+repeated_failed_users = {
+    user: count for user, count in failed_user_login.items() if count > 1
+}
 
 # Added code to identify suspicious privilege changes based on keywords in the message
 suspicious_priv = []
@@ -98,7 +106,16 @@ for item in priv_change[:5]:
 print("\nFirst 5 suspicious privilege changes (if any):")
 for item in suspicious_priv[:5]:
     ts, user, ip, msg = item
-    print(f"  {ts} user={user} ip={ip} message={msg}")    
+    print(f"  {ts} user={user} ip={ip} message={msg}")  
+
+# Printing summary of repeated failed login attempts by user, sorted by count. This can help identify 
+# potential brute-force attacks or compromised accounts.
+print("\nRepeated failed login attempts by user:")
+if not repeated_failed_users:
+    print(" None found.")
+else:
+    for user, count in sorted(repeated_failed_users.items(), key=lambda x: x[1], reverse=True):
+        print(f"  {user}: {count} failed logins")  
 
 with open("summary.txt", "w", encoding="utf-8") as out: # Writing results to a file for review.
 
