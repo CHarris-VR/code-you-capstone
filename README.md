@@ -12,6 +12,10 @@ It works by seperating various data from the sample_log.txt such as AUTH_SUCCESS
 ### How to use this tool:
 First you will need to have a file provided [here!](https://github.com/CHarris-VR/code-you-capstone/blob/main/sample_log.txt) or by clicking on the link above to the sample_log.txt
 
+### IMPORTANT:
+If you have compatibility issues, this code was created in Python 3.11.5 Try switching to this version of python when running the code to 
+ensure everything works properly.
+
 
 
 # Log Source
@@ -27,6 +31,8 @@ easily categorized into various parts such as:
 - user
 - ip
 - message
+
+
 
 
 
