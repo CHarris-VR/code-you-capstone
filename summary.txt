@@ -6,7 +6,22 @@ Total successful logins: 970
 === Authentication Failures ===
 Total failed logins: 169
 
-Details ):
+=== Repeated Failed Logins by User ===
+ admin: 23 failed logins
+ root: 20 failed logins
+ jtoll: 19 failed logins
+ tbraxter: 14 failed logins
+ jdoe: 13 failed logins
+ 69691234: 2 failed logins
+ @@@*$)!^: 2 failed logins
+ dilheen: 2 failed logins
+ relic1969: 2 failed logins
+ 696910: 2 failed logins
+ 0875660762: 2 failed logins
+ 2102319: 2 failed logins
+ 5334376: 2 failed logins
+
+Details (First 10 failed logins.):
  2026-03-11T07:52:56Z user=root ip=192.168.1.15 message=Invalid password
  2026-03-10T17:34:52Z user=admin ip=192.168.1.15 message=Invalid password
  2026-03-11T11:42:58Z user=root ip=192.168.1.15 message=Invalid password
@@ -22,7 +37,7 @@ Details ):
 Total privilege change events: 95
 Suspicious events detected: 50
 
-Details (up to first 10):
+Details (All suspicious privilege changes.):
  2026-03-12T02:43:11Z user=hmulrooney1 ip=194.77.213.18 message=Granted sudo privileges
  2026-03-16T01:27:30Z user=root ip=51.91.61.140 message=Granted sudo privileges
  2026-03-10T20:03:39Z user=hgaineofengland3 ip=84.201.139.199 message=Granted sudo privileges
