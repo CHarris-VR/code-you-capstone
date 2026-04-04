@@ -2,9 +2,16 @@
 # Designed to read files and identify repeated failed login attempts
 # Will also Identify suspicious IP activity, identify privilege escalation attempts
 # Code:You Cybersecurity Analyst Pathway 2025
+# Code was created in Python 3.11.5 incase of compatibility issues with older and newer versions.
+# By Curtis Harris
 
-
+# This code reads a log file, counts events, users, and IPs, 
+# and identifies failed login attempts and suspicious privilege changes. 
+# It then prints a summary to the console and writes details to a summary.txt file for review.
 from collections import Counter
+
+# Define the log file to analyze. 
+# In a real scenario, this could be passed as an argument or read from a config.
 filename = 'sample_log.txt'
 
 
@@ -12,6 +19,7 @@ event_counts = Counter()
 user_counts = Counter()
 ip_counts = Counter()
 failed_user_login = Counter()
+
 # Creating a counter auth success and auth failure.
 auth_success = 0
 auth_fail = 0
@@ -22,17 +30,26 @@ priv_change = [] # store details about privilege changes
 
 with open(filename, 'r', encoding='utf-8') as f:
     for line in f:
+        # what does strip do? 
+        # It removes leading and trailing whitespace, including newlines. 
+        # This helps clean up the log lines for easier parsing.
         line = line.strip()
         if not line:
             continue
 
+        # Basic parsing of log lines. This assumes a format like: 
+        # "timestamp event user=... ip=... message=..."
         parts = line.split(None, 2)
         timestamp = parts[0]
         event = parts[1]
+
+        # The rest of the line may contain user, ip, 
+        # and message details. We will parse those if they exist.
         rest = parts[2] if len(parts) > 2 else ""
 
         event_counts[event] += 1
 
+        # Initialize variables to store user, ip, and message details for this log line.
         user = ""
         ip = ""
         message = ""
@@ -117,8 +134,11 @@ else:
     for user, count in sorted(repeated_failed_users.items(), key=lambda x: x[1], reverse=True):
         print(f"  {user}: {count} failed logins")  
 
-with open("summary.txt", "w", encoding="utf-8") as out: # Writing results to a file for review.
+# Writing results to a file for review. This allows for a more permanent record 
+# of the analysis and can be shared with others or used for further investigation.
+with open("summary.txt", "w", encoding="utf-8") as out: 
 
+    # Define a helper function to write lines to both the console and the file. 
     def write(line=""):
         print(line)
         out.write(line + "\n")
@@ -137,10 +157,11 @@ with open("summary.txt", "w", encoding="utf-8") as out: # Writing results to a f
     if not failed_logins:
         write("No failed login attempts found.")
     else:
-        write("\nDetails ):")
+        write("\nDetails (All failed logins.):")
         for ts, user, ip, msg in failed_logins[:10]:
-            write(f" {ts} user={user} ip={ip} message={msg}")    # Suspicious Privilege Changes
+            write(f" {ts} user={user} ip={ip} message={msg}")
     
+    # Suspicious Privilege Changes
     write("\n=== Suspicious Privilege Changes ===")
     write(f"Total privilege change events: {len(priv_change)}")
     write(f"Suspicious events detected: {len(suspicious_priv)}")
@@ -148,7 +169,7 @@ with open("summary.txt", "w", encoding="utf-8") as out: # Writing results to a f
     if not suspicious_priv:
         write("No suspicious privilege changes found.")
     else:
-        write("\nDetails (up to first 10):")
+        write("\nDetails (All suspicious privilege changes.):")
         for ts, user, ip, msg in suspicious_priv:
             write(f" {ts} user={user} ip={ip} message={msg}")
     
