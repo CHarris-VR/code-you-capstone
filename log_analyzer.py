@@ -154,10 +154,18 @@ with open("summary.txt", "w", encoding="utf-8") as out:
     write("\n=== Authentication Failures ===")
     write(f"Total failed logins: {auth_fail}")
 
+    # Repeated Failed Logins. Added for log review.
+    write("\n=== Repeated Failed Logins by User ===")
+    if not repeated_failed_users:
+        write("No repeated failed login attempts found.")
+    else:
+        for user, count in sorted(repeated_failed_users.items(), key=lambda x: x[1], reverse=True):
+            write(f" {user}: {count} failed logins")
+
     if not failed_logins:
         write("No failed login attempts found.")
     else:
-        write("\nDetails (All failed logins.):")
+        write("\nDetails (First 10 failed logins.):")
         for ts, user, ip, msg in failed_logins[:10]:
             write(f" {ts} user={user} ip={ip} message={msg}")
     
