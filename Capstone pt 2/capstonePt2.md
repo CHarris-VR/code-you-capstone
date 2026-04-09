@@ -29,7 +29,7 @@ WIN-LU4L24X3UB7 ip address: 10.9.42.2
 
 Given the configuration of the systems listed above there are overlapping ips between what I would consider the intel based router and the dell based server which I believe lead to a man in the middle attack given results from the pcap file provided. 
 
-
+![image alt](https://github.com/CHarris-VR/code-you-capstone/blob/main/photos/refpic1.png)
 
 
 
