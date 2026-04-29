@@ -179,5 +179,3 @@ with open("summary.txt", "w", encoding="utf-8") as out:
         write("\nDetails (All suspicious privilege changes.):")
         for ts, user, ip, msg in suspicious_priv:
             write(f" {ts} user={user} ip={ip} message={msg}")
-    
-
