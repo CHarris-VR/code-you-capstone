@@ -96,7 +96,6 @@ for ts, user, ip, msg in priv_change:
         suspicious_priv.append((ts, user, ip, msg))
 
 # Print results to check code for correct functionality. 
-
 print("=== Summary ===")
 print("Total Lines (events) by type:")
 for ev, count in event_counts.most_common():
