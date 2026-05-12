@@ -158,6 +158,9 @@ with open("summary.txt", "w", encoding="utf-8") as out:
     if not repeated_failed_users:
         write("No repeated failed login attempts found.")
     else:
+        # Lambda function is used to sort the users by the count of failed logins in descending order.
+        # Lambda is an anonymous function that takes an item (in this case, a tuple of user and count) 
+        # and returns the count for sorting purposes.
         for user, count in sorted(repeated_failed_users.items(), key=lambda x: x[1], reverse=True):
             write(f" {user}: {count} failed logins")
 
